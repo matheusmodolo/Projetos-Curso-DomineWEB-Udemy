@@ -18,19 +18,137 @@
 				<div id="logo">
 					<h1><a href="#">Museu Nacional</a></h1>
 				</div>
-				
+
 				<nav>
 					<ul>
 						<li><a href="#">Home</a></li>
-						<li><a href="#">Exposições</a></li>
+						<li><a href="#exposicoes">Exposições</a></li>
 						<li><a href="#">Pesquisa</a></li>
 						<li><a href="#">Acervo</a></li>
-						<li><a href="#">Vídeos</a></li>
-						<li><a href="#">Fotos</a></li>
+						<li><a href="#video">Vídeos</a></li>
+						<li><a href="#galeria">Fotos</a></li>
 						<li><a href="#">Contato</a></li>
 					</ul>
 				</nav>
 			</header>
+
+			<div id="principal">
+				<div id="conteudo">
+					<section id="capa">
+						<img src="img/museu.png">
+					</section>
+
+					<section id="postagens">
+						<article id="video">
+							<h3>Conheça o Museu</h3>
+							<iframe width="310" height="170"
+								src="https://www.youtube-nocookie.com/embed/RGUYb-hivrc" title="YouTube
+								video player" frameborder="0" allow="accelerometer; autoplay;
+								clipboard-write; encrypted-media; gyroscope; picture-in-picture;
+								web-share" allowfullscreen></iframe>
+						</article>
+						<article id="mapa">
+							<h3>Encontre o Museu</h3>
+							<iframe
+								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.171351341241!2d-43.22851119955519!3d-22.907049843565527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997e58a085b7af%3A0x4d11e9a933d38ce3!2sMuseu%20Nacional%20-%20UFRJ!5e0!3m2!1spt-BR!2sbr!4v1681255685635!5m2!1spt-BR!2sbr"
+								width="310" height="170" style="border:0;" allowfullscreen=""
+								loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+						</article>
+						<article id="exposicoes">
+							<h3>Exposições</h3>
+							<ul>
+								<li>
+									<a href="#">Luzia: A face da pré-história nas Américas.</a>
+								</li>
+								<li>
+									<a href="#">Dinossauros do Brasil: Uma viagem ao passado.</a>
+								</li>
+								<li>
+									<a href="#">Tesouros do Egito Antigo: Relíquias do Nilo.</a>
+								</li>
+								<li>
+									<a href="#">Arte indígena brasileira: Cultura e tradição.</a>
+								</li>
+								<li>
+									<a href="#">Meteoritos: Visitantes de outros mundos.</a>
+								</li>
+								<li>
+									<a href="#">Fauna e Flora da Mata Atlântica: Tesouros da biodiversidade
+										brasileira.</a>
+								</li>
+								<li>
+									<a href="#"><strong>Veja todos (65)</strong></a>
+								</li>
+							</ul>
+						</article>
+
+						<article id="historia">
+							<h3>200 anos de história</h3>
+							<p>O Museu Nacional é uma instituição brasileira com mais de 200 anos de
+								história, que tem como objetivo promover a pesquisa científica, educação
+								e preservação do patrimônio cultural e natural do Brasil. Apesar de um
+								incêndio ter causado danos irreparáveis em grande parte do acervo em
+								2018, o museu continua sendo um símbolo de perseverança e um compromisso
+								com a preservação da cultura e história do país.</p>
+							<a href="#"><strong>Leia mais</strong></a>
+						</article>
+					</section>
+
+				</div>
+				<aside>
+					<section id="depoimento">
+						<img src="img/depoimento.png">
+					</section>
+
+					<section id="visita">
+						<h4>Faça uma visita</h4>
+						<form>
+							<fieldset>
+								<legend>Selecione uma data:</legend>
+								<label for="data">Data:</label>
+								<input type="date" id="data" class="campo">
+								<br>
+								<label for="data">Quantidade de Pessoas:</label>
+								<input type="number" id="qtd" class="campo" value="1">
+							</fieldset>
+
+							<input type="submit" class="botao" value="Verificar Disponibilidade">
+						</form>
+					</section>
+
+					<section id="galeria">
+						<h4>Galeria de fotos</h4>
+
+						<a href="">
+							<img src="img/imagem1.jpg" height="93" width="93">
+						</a>
+						<a href="">
+							<img src="img/imagem2.jpg" height="93" width="93">
+						</a>
+						<a href="">
+							<img src="img/imagem3.jpg" height="93" width="93">
+						</a>
+						<a href="">
+							<img src="img/imagem4.jpg" height="93" width="93">
+						</a>
+
+					</section>
+				</aside>
+				<footer>
+					<p>
+						<a href="#">Home</a>
+						<a href="#exposicoes">Exposições</a>
+						<a href="#">Pesquisa</a>
+						<a href="#">Acervo</a>
+						<a href="#video">Vídeos</a>
+						<a href="#galeria">Fotos</a>
+						<a href="#">Contato</a>
+					</p>
+					<p>
+						2023 <a href="#">Museu Nacional</a> - Todos os direitos reservados.
+					</p>
+				</footer>
+			</div>
 		</div>
 
 	</body>
