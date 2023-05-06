@@ -2,6 +2,7 @@ html,
 body,
 #home {
     height: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -10,6 +11,38 @@ body {
         linear-gradient(50deg, #ff4169, #7c26f8);
     background-attachment: fixed;
     font-family: Helvetica, Arial, sans-serif;
+}
+
+footer{
+    background-color: black;
+    padding: 50px 0 20px 0;
+    position: relative;
+}
+
+footer h4{
+    color: #919496;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+footer .navbar-nav a{
+    text-decoration: none;
+    color: white;
+    font-size: 0.8em;
+}
+
+footer .navbar-nav a:hover{
+    text-decoration: none;
+    color: #9bf0e1;
+}
+
+footer ul{
+    list-style: none;
+}
+
+footer ul li{
+    float: right;
+    margin: 0 5px;
 }
 
 nav.navbar-transparente {
@@ -66,11 +99,58 @@ div .btn-branco:hover {
     color: black;
 }
 
+.caixa{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#servicos {
+    background-color: white;
+}
+
+#servicos h2,
+h3 {
+    color: #7c25f8;
+}
+
+#recursos {
+    color: white;
+}
+
+#recursos h2 {
+    color: white;
+}
+
+#recursos h3 {
+    color: #9bf0e1;
+}
+
+.albuns {
+    padding: 10px 0;
+}
+
+.rotacionar{
+    transform: rotate(30deg);
+    padding-left: 80px;
+}
+
 div h1 {
     font-weight: bold;
     letter-spacing: -0.05em;
     margin-bottom: 50px;
     color: white;
+}
+
+div h2 {
+    font-size: 3em;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+
+div h3 {
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: -0.04em;
 }
 
 @media (max-width: 575.98px) {
@@ -80,6 +160,7 @@ div h1 {
 
     div .btn-custom {
         margin: 10px 15px;
+        font-size: 1em;
     }
 }
 
@@ -110,3 +191,4 @@ div h1 {
         font-size: 6em;
     }
 }
+
