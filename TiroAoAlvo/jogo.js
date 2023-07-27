@@ -13,7 +13,7 @@ function posicaoRandomica() {
 
 	var alvo = document.createElement("img");
 	alvo.src = "imagens/alvo.png";
-	alvo.className = "alvo1";
+	alvo.className = tamanhoAleatorio();
 
 	document.body.appendChild(alvo);
 
@@ -30,7 +30,6 @@ function posicaoRandomica() {
 	alvo.style.position = "absolute";
 
 }
-
 
 //retorna a largura do elemento no CSS
 function larguraCSS(elemento) {
@@ -51,4 +50,17 @@ function alturaCSS(elemento) {
 	//remove o "px" da string
 	altura = altura.substring(0, tamanho - 2);
 	return parseInt(altura);
+}
+
+function tamanhoAleatorio() {
+	var classe = Math.floor(Math.random() * 3);
+
+	switch (classe) {
+		case 0:
+			return "alvo1";
+		case 1:
+			return "alvo2";
+		case 2:
+			return "alvo3";
+	}
 }
