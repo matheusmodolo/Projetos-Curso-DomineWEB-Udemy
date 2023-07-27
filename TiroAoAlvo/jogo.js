@@ -1,5 +1,6 @@
 var largura = 0;
 var altura = 0;
+var vida = 1;
 
 function ajustaTamanhoPalcoJogo() {
 	largura = window.innerWidth;
@@ -14,6 +15,13 @@ function posicaoRandomica() {
 	//remover o alvo anterior (caso exista)
 	if (document.getElementById("alvo")) {
 		document.getElementById("alvo").remove();
+
+		if (vida > 3){
+			alert("game over");
+		}
+		document.getElementById("v" + vida).src = "imagens/coracao_vazio.png";
+
+		vida++;
 	}
 
 	var alvo = document.createElement("img");
@@ -34,6 +42,10 @@ function posicaoRandomica() {
 	alvo.style.top = posicaoY + "px";
 	alvo.style.position = "absolute";
 	alvo.id = "alvo";
+
+	alvo.onclick = function () {
+		this.remove();
+	};
 
 }
 
