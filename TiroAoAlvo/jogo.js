@@ -8,7 +8,9 @@ var cronometro = setInterval(function () {
 	if (tempo < 0) {
 		clearInterval(cronometro);
 		clearInterval(criaAlvo);
-		alert("Vitória");
+		
+		window.location.href = "vitoria.html";
+		
 	} else {
 		document.getElementById("cronometro").innerHTML = tempo;
 	}
