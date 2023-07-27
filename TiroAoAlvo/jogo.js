@@ -1,6 +1,21 @@
 var largura = 0;
 var altura = 0;
 var vida = 1;
+var tempo = 10;
+
+var cronometro = setInterval(function () {
+
+	if (tempo < 0) {
+		clearInterval(cronometro);
+		clearInterval(criaAlvo);
+		alert("Vitória");
+	} else {
+		document.getElementById("cronometro").innerHTML = tempo;
+	}
+
+	tempo -= 1;
+
+}, 1000);
 
 function ajustaTamanhoPalcoJogo() {
 	largura = window.innerWidth;

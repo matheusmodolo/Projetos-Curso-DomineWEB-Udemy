@@ -16,14 +16,17 @@
 				<img id="v2" src="imagens/coracao_cheio.png" />
 				<img id="v3" src="imagens/coracao_cheio.png" />
 			</div>
-			<div class="cronometro">Tempo restante: ?</div>
+			<div class="cronometro">Tempo restante: <span id="cronometro"></span> s</div>
 
 		</div>
 
 		<script>
-			setInterval(function(){
+			
+			document.getElementById("cronometro").innerHTML = tempo;
+
+			var criaAlvo = setInterval(function(){
 				posicaoRandomica();
-			}, 1000);
+			}, 2000);
 			
 		</script>
 	</body>
