@@ -11,6 +11,11 @@ ajustaTamanhoPalcoJogo();
 
 function posicaoRandomica() {
 
+	//remover o alvo anterior (caso exista)
+	if (document.getElementById("alvo")) {
+		document.getElementById("alvo").remove();
+	}
+
 	var alvo = document.createElement("img");
 	alvo.src = "imagens/alvo.png";
 	alvo.className = tamanhoAleatorio();
@@ -28,6 +33,7 @@ function posicaoRandomica() {
 	alvo.style.left = posicaoX + "px";
 	alvo.style.top = posicaoY + "px";
 	alvo.style.position = "absolute";
+	alvo.id = "alvo";
 
 }
 
