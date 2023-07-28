@@ -2,15 +2,34 @@ var largura = 0;
 var altura = 0;
 var vida = 1;
 var tempo = 10;
+var criaAlvoTempo = 0;
+
+var nivel = window.location.search;
+nivel = nivel.replace("?", "");
+console.log(nivel);
+
+switch (nivel) {
+	case "facil":
+		criaAlvoTempo = 1500;
+		break;
+	case "medio":
+		criaAlvoTempo = 1000;
+		break;
+	case "dificil":
+		criaAlvoTempo = 750;
+		break;
+	default:
+		break;
+}
 
 var cronometro = setInterval(function () {
 
 	if (tempo < 0) {
 		clearInterval(cronometro);
 		clearInterval(criaAlvo);
-		
+
 		window.location.href = "vitoria.html";
-		
+
 	} else {
 		document.getElementById("cronometro").innerHTML = tempo;
 	}
