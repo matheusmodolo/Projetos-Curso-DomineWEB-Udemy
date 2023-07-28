@@ -1,7 +1,7 @@
 var largura = 0;
 var altura = 0;
 var vida = 1;
-var tempo = 10;
+var tempo = 15;
 var criaAlvoTempo = 0;
 
 var nivel = window.location.search;
@@ -34,7 +34,7 @@ var cronometro = setInterval(function () {
 		document.getElementById("cronometro").innerHTML = tempo;
 	}
 
-	tempo -= 1;
+	tempo--;
 
 }, 1000);
 
@@ -82,7 +82,6 @@ function posicaoRandomica() {
 	alvo.onclick = function () {
 		this.remove();
 	};
-
 }
 
 //retorna a largura do elemento no CSS

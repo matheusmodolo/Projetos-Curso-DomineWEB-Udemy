@@ -1,3 +1,7 @@
+html {
+    cursor: url(imagens/mira.png) 35 35, auto;
+}
+
 body {
     background-image: url(imagens/bg.jpg);
     background-repeat: no-repeat;
