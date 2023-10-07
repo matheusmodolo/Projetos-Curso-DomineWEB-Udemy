@@ -4,14 +4,77 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Projetos do Curso DomineWeb</title>
+
+        <style>
+            body{
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-size: 1.1em;
+                background-color: #373636;
+            }
+
+            #projetos{
+                margin-top: 5%;
+               text-align: center;
+               color: #15AAFF;
+            }
+
+            a{
+                text-decoration: none;
+                color: #373636;
+            }
+
+            .projetos-itens{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 29.5px;
+                width: 100%;
+                justify-content: center;
+                margin-top: 5%;
+                
+            }
+            .item{
+                background-color: #F8F7F3;
+                height: 110px;
+                width: 220px;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: .2s linear all;
+                box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .item:hover{
+                background-color: #15AAFF;
+                color: #F8F7F3;
+            }
+        </style>
     </head>
     <body>
-        <h1>Projetos</h1>
-        <ul>
-            <li><a href="finans/index.html">Finans</a></li>
-            <li><a href="MuseuNacional/index.html">Museu Nacional</a></li>
-            <li><a href="SpotifyAntigoClone/index.html">Clone do Spotify Antigo</a></li>
-            <li><a href="TiroAoAlvo/index.html">Tiro ao Alvo</a></li>
+        <h1 id="projetos">Projetos</h1>
+
+        <div class="projetos-itens">
+            
+            <a href="finans/index.html">
+                <div class="item">Finans</div>
+            </a>
+        
+            <a href="MuseuNacional/index.html">
+                <div class="item">Museu Nacional</div>
+            </a>
+
+            <a href="SpotifyAntigoClone/index.html">
+                <div class="item">Clone do Spotify Antigo</div>
+            </a>
+
+            <a href="TiroAoAlvo/index.html">
+                <div class="item">Tiro ao Alvo</div>
+            </a>
+            
+        </div>
+
         </ul>
 
     </body>
