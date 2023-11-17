@@ -90,6 +90,14 @@ function cadastrarDespesa() {
     document.getElementById("modal_btn").innerHTML = "Voltar";
 
     $("#modal_registrar").modal("show");
+
+    ano.value = "";
+    mes.value = "";
+    dia.value = "";
+    tipo.value = "";
+    descricao.value = "";
+    valor.value = "";
+
   } else {
     //dialog de erro
     document.getElementById("modal_titulo_cor").className =
