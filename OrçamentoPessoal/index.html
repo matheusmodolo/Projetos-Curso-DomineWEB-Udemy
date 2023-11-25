@@ -25,6 +25,7 @@
     <!-- Font Awesome -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
+    <!-- Script -->
     <script src="app.js"></script>
 
   </head>
@@ -66,7 +67,7 @@
 
       <div class="row mb-2">
 
-        <div class="col-md-2">
+        <div class="col-md-3">
           <input type="date" class="form-control" required id="data" />
         </div>
 
@@ -100,7 +101,7 @@
           <input type="text" class="form-control" placeholder="Dia" id="dia" />
         </div> -->
 
-        <div class="col-md-6">
+        <div class="col-md-9">
           <select class="form-control" id="tipo">
             <option value>Tipo</option>
             <option value="1">Alimentação</option>
@@ -118,11 +119,11 @@
             id="descricao" />
         </div>
 
-        <div class="col-md-2">
+        <div class="col-md-3">
           <input type="number" class="form-control" placeholder="Valor" id="valor"/>
         </div>
 
-        <div class="col-md-2 d-flex justify-content-end">
+        <div class="col-md-1 d-flex justify-content-end">
           <button type="button" class="btn btn-primary"
             onclick="cadastrarDespesa()">
             <i class="fas fa-plus"></i>
