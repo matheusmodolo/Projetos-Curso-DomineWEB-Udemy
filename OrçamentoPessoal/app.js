@@ -1,8 +1,10 @@
 class Despesa {
-  constructor(ano, mes, dia, tipo, descricao, valor) {
-    this.ano = ano;
-    this.mes = mes;
-    this.dia = dia;
+  constructor(data, tipo, descricao, valor) {
+    this.data = data;
+    let num = this.data.split("-");
+    this.ano = num[0];
+    this.mes = num[1];
+    this.dia = num[2];
     this.tipo = tipo;
     this.descricao = descricao;
     this.valor = valor;
@@ -103,7 +105,6 @@ class Bd {
         (d) => d.valor == despesa.valor
       );
     }
-
     return despesasFiltradas;
   }
 
@@ -115,17 +116,13 @@ class Bd {
 let bd = new Bd();
 
 function cadastrarDespesa() {
-  let ano = document.getElementById("ano");
-  let mes = document.getElementById("mes");
-  let dia = document.getElementById("dia");
+  let data = document.getElementById("data");
   let tipo = document.getElementById("tipo");
   let descricao = document.getElementById("descricao");
   let valor = document.getElementById("valor");
 
   let despesa = new Despesa(
-    ano.value,
-    mes.value,
-    dia.value,
+    data.value,
     tipo.value,
     descricao.value,
     valor.value
@@ -134,6 +131,7 @@ function cadastrarDespesa() {
   if (despesa.validarDados()) {
     bd.gravar(despesa);
 
+    //mensagem de sucesso
     document.getElementById("modal_titulo").innerHTML =
       "Registro inserido com sucesso";
     document.getElementById("modal_titulo_div").className =
@@ -146,6 +144,7 @@ function cadastrarDespesa() {
     //mensagem de sucesso
     $("#modalRegistraDespesa").modal("show");
 
+    data.value = "";
     ano.value = "";
     mes.value = "";
     dia.value = "";
@@ -153,6 +152,7 @@ function cadastrarDespesa() {
     descricao.value = "";
     valor.value = "";
   } else {
+    //mensagem de erro
     document.getElementById("modal_titulo").innerHTML =
       "Erro na inclusão do registro";
     document.getElementById("modal_titulo_div").className =
@@ -223,11 +223,12 @@ function pesquisarDespesa() {
   let ano = document.getElementById("ano").value;
   let mes = document.getElementById("mes").value;
   let dia = document.getElementById("dia").value;
+  let data = ano + "-" + mes + "-" + dia;
   let tipo = document.getElementById("tipo").value;
   let descricao = document.getElementById("descricao").value;
   let valor = document.getElementById("valor").value;
 
-  let despesa = new Despesa(ano, mes, dia, tipo, descricao, valor);
+  let despesa = new Despesa(data, tipo, descricao, valor);
 
   let despesas = bd.pesquisar(despesa);
 
