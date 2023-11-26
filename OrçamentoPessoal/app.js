@@ -8,6 +8,13 @@ class Despesa {
     this.tipo = tipo;
     this.descricao = descricao;
     this.valor = valor;
+
+    if (this.valor != "") {
+      this.valor = parseFloat(this.valor).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      });
+    }
   }
 
   validarDados() {
@@ -101,6 +108,8 @@ class Bd {
 
     if (despesa.valor != "") {
       console.log("filtro de valor");
+      console.log("despesa.valor:" + despesa.valor);
+      console.log("typeof despesa.valor: " + typeof despesa.valor);
       despesasFiltradas = despesasFiltradas.filter(
         (d) => d.valor == despesa.valor
       );
@@ -198,6 +207,7 @@ function carregaListaDespesas(despesas = Array(), filtro = false) {
     }
     linha.insertCell(1).innerHTML = d.tipo;
     linha.insertCell(2).innerHTML = d.descricao;
+    // d.valor = d.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     linha.insertCell(3).innerHTML = d.valor;
 
     //Criar o botão de exclusão
@@ -206,7 +216,6 @@ function carregaListaDespesas(despesas = Array(), filtro = false) {
     btn.innerHTML = '<i class="fa fa-times"  ></i>';
     btn.id = `id_despesa_${d.id}`;
     btn.onclick = function () {
-
       let confirmacao = confirm("Deseja mesmo excluir o item?");
 
       if (confirmacao) {
