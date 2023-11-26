@@ -145,9 +145,6 @@ function cadastrarDespesa() {
     $("#modalRegistraDespesa").modal("show");
 
     data.value = "";
-    ano.value = "";
-    mes.value = "";
-    dia.value = "";
     tipo.value = "";
     descricao.value = "";
     valor.value = "";
@@ -209,13 +206,17 @@ function carregaListaDespesas(despesas = Array(), filtro = false) {
     btn.innerHTML = '<i class="fa fa-times"  ></i>';
     btn.id = `id_despesa_${d.id}`;
     btn.onclick = function () {
-      let id = this.id.replace("id_despesa_", "");
-      //alert(id)
-      bd.remover(id);
-      window.location.reload();
+
+      let confirmacao = confirm("Deseja mesmo excluir o item?");
+
+      if (confirmacao) {
+        let id = this.id.replace("id_despesa_", "");
+        bd.remover(id);
+        window.location.reload();
+      }
     };
     linha.insertCell(4).append(btn);
-    console.log(d);
+    // console.log(d);
   });
 }
 
