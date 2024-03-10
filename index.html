@@ -7,20 +7,24 @@
 
         <style>
             body{
-                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                font-size: 1.1em;
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                font-size: 1.2em;
                 background-color: #373636;
+                color: #f0f0f0;
             }
 
             #projetos{
-                margin-top: 5%;
+               margin-top: 5%;
                text-align: center;
                color: #15AAFF;
+
+               font-size: 2em;
+               font-weight: bold;
             }
 
             a{
                 text-decoration: none;
-                color: #373636;
+                color: #15AAFF;
             }
 
             .projetos-itens{
@@ -28,21 +32,25 @@
                 flex-direction: row;
                 flex-wrap: wrap;
                 gap: 29.5px;
-                width: 100%;
+                width: 80%;
+                margin: auto;
                 justify-content: center;
                 margin-top: 5%;
-                
             }
+            
             .item{
-                background-color: #F8F7F3;
+                margin: 15px;
                 height: 110px;
                 width: 220px;
                 border-radius: 5px;
                 display: flex;
+                background-color: #d1d1d1;
+                color: #373636;
+                text-align: center;
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
-                transition: .2s linear all;
+                transition: .3s ease all;
                 box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
             }
 
@@ -56,17 +64,17 @@
         <h1 id="projetos">Projetos</h1>
 
         <div class="projetos-itens">
-            
+
             <a href="Finans/index.html">
                 <div class="item">Finans</div>
             </a>
-        
+
             <a href="MuseuNacional/index.html">
                 <div class="item">Museu Nacional</div>
             </a>
 
             <a href="SpotifyAntigoClone/index.html">
-                <div class="item">Clone do Spotify Antigo</div>
+                <div class="item">Clone do<br/>Spotify Antigo</div>
             </a>
 
             <a href="TiroAoAlvo/index.html">
@@ -76,7 +84,11 @@
             <a href="OrçamentoPessoal/index.html">
                 <div class="item">Orçamento Pessoal</div>
             </a>
-            
+
+            <a href="PesquisaEndereço/index.html">
+                <div class="item">Pesquisar CEP</div>
+            </a>
+
         </div>
     </body>
 </html>
