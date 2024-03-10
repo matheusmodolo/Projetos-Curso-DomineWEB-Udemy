@@ -1,0 +1,21 @@
+.navbar-brand h3 {
+    color: #086877;
+    margin-top: 20px;
+}
+
+.form-control[readonly] {
+    background-color: #e9ecef;
+    transition: background-color 0.5s ease;
+}
+
+.form-control {
+    transition: all 0.5s ease;
+}
+
+.form-control:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.loading {
+    display: none;
+}

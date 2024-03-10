@@ -4,34 +4,12 @@
     <head>
         <meta charset="utf-8">
         <title>Pesquisar Endereço</title>
+        <!-- Importando o CSS do Bootstrap e estilos personalizados -->
         <link rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
             integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
             crossorigin="anonymous">
-        <style>
-            body {
-                background-color: #f8f9fa;
-            }
-
-            .navbar-brand h3 {
-                color: #086877;
-                margin-top: 20px;
-            }
-
-            .form-control[readonly] {
-                background-color: #e9ecef;
-                transition: background-color 0.5s ease;
-            }
-
-            .form-control {
-                transition: all 0.5s ease;
-            }
-
-            .form-control:hover {
-                box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            }
-
-        </style>
+        <link rel="stylesheet" href="estilo.css">
     </head>
 
     <body>
@@ -43,59 +21,75 @@
             </div>
         </nav>
 
+        <!-- Formulário para inserir o CEP e exibir o endereço -->
         <div class="container">
             <div class="row form-group">
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" placeholder="CEP" onblur="getDadosEnderecoPorCEP(this.value)"/>
+                    <!-- Campo para inserir o CEP. Quando o campo perde o foco ou é pressionado 'Enter', a função getDadosEnderecoPorCEP é chamada -->
+                    <input type="text" maxlength="8" class="form-control" placeholder="CEP"
+                        onblur="getDadosEnderecoPorCEP(this.value)"
+                        onkeydown="if (event.keyCode == 13) getDadosEnderecoPorCEP(this.value)" />
                 </div>
                 <div class="col-sm-9">
+                    <!-- Campo para exibir o endereço. -->
                     <input type="text" class="form-control"
-                        placeholder="Endereço" readonly id="endereco"/>
+                        placeholder="Endereço" readonly id="endereco" />
                 </div>
             </div>
 
+            <!-- Mais campos para exibir informações do endereço -->
             <div class="row form-group">
                 <div class="col-sm-6">
                     <input type="text" class="form-control" placeholder="Bairro"
-                        readonly id="bairro"/>
+                        readonly id="bairro" />
                 </div>
                 <div class="col-sm-4">
                     <input type="text" class="form-control" placeholder="Cidade"
-                        readonly id="cidade"/>
+                        readonly id="cidade" />
                 </div>
 
                 <div class="col-sm-2">
                     <input type="text" class="form-control" placeholder="UF"
-                        readonly id="uf"/>
+                        readonly id="uf" />
                 </div>
             </div>
         </div>
 
-        <script>
-            function getDadosEnderecoPorCEP(cep){
-                
-                let url = "https://viacep.com.br/ws/" + cep + "/json/";
+        <!-- Indicador de carregamento -->
+        <div class="container">
+            <div class="loading">Carregando...</div>
+        </div>
 
-                let xmlHttp = new XMLHttpRequest();
-                xmlHttp.open("GET", url);
+        <!-- Modal de erro -->
+        <div class="modal" tabindex="-1" role="dialog" id="errorModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Erro</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Fechar">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Não foi possível obter o CEP. Por favor, insira um
+                            CEP válido. (Somente números)</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button"
+                            class="btn btn-secondary btn-danger"
+                            data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                xmlHttp.onreadystatechange = () => {
-                    if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
-                        let dadosJSONText = xmlHttp.responseText;
-                        let dadosJSONObj = JSON.parse(dadosJSONText); 
+        <!-- Importando o jQuery e o JavaScript do Bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
-                        document.getElementById('endereco').value = dadosJSONObj.logradouro;
-                        document.getElementById('bairro').value = dadosJSONObj.bairro;
-                        document.getElementById('cidade').value = dadosJSONObj.localidade;
-                        document.getElementById('uf').value = dadosJSONObj.uf;
-
-                    }
-                }; 
-
-                xmlHttp.send();
-                
-            }
-        </script>
+        <script src="script.js"></script>
     </body>
 
 </html>
