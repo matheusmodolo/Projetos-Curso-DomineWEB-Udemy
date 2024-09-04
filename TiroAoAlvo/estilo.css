@@ -1,56 +1,29 @@
 html {
-    cursor: url(imagens/mira.png) 35 35, auto;
+  cursor: url(imagens/mira.png) 35 35, auto;
 }
 
 body {
-    background-image: url(imagens/bg.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-
-}
-
-.painel {
-    position: absolute;
-    width: 190px;
-    padding: 10px;
-    bottom: 0;
-    border-top: solid 1px white;
-    background-color: white;
-    opacity: 0.7;
-    left: 0;
-}
-
-.vidas {
-    float: left;
-
-}
-
-.cronometro {
-    float: left;
-    font-size: 20px;
-    font-weight: bold;
+  background-image: url(imagens/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .alvo1 {
-    width: 50px;
-    height: 50px;
+  width: 50px;
+  height: 50px;
 }
 
 .alvo2 {
-    width: 75px;
-    height: 75px;
+  width: 75px;
+  height: 75px;
 }
 
 .alvo3 {
-    width: 100px;
-    height: 100px;
-}
-
-.imagem_fdj {
-    margin-top: 150px;
+  width: 100px;
+  height: 100px;
 }
 
 .imagem_vit {
-    margin-top: 20px;
-    margin-bottom: -102px;
+  margin-top: 20px;
+  margin-bottom: -102px;
 }
