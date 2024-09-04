@@ -10,16 +10,16 @@ console.log(nivel);
 
 switch (nivel) {
   case "facil":
-    criaAlvoTempo = 1500;
+    criaAlvoTempo = 2000;
     break;
   case "medio":
-    criaAlvoTempo = 1000;
+    criaAlvoTempo = 1500;
     break;
   case "dificil":
-    criaAlvoTempo = 750;
+    criaAlvoTempo = 1000;
     break;
   case "expert":
-    criaAlvoTempo = 500;
+    criaAlvoTempo = 650;
     break;
   default:
     break;
